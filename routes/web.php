@@ -49,3 +49,7 @@ use App\Http\Controllers\ArticleController;
 Route::get('/creer-article', [ArticleController::class, 'create']);
 Route::post('/articles', [ArticleController::class, 'store']);
 Route::get('/articles', [ArticleController::class, 'index']);
+
+
+use App\Http\Controllers\CommentController;
+Route::post('/articles/{article}/comments', [CommentController::class, 'store'])->middleware('auth');
